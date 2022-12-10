@@ -1,0 +1,21 @@
+-in:file:s BBN19335_UDG_LIG.pdb 
+-in:file:native BBN19335_UDG_LIG.pdb 
+-in:file:extra_res_fa UDG.params LIG.params 
+
+-run::preserve_header 
+#-in:auto_setup_metals 
+
+-qsar:grid_dir /home/wangq/Tmp/grids 
+-parser:protocol dockingUGT.xml 
+-packing 
+    -ex1 
+    -ex2 
+    -no_optH false 
+    -flip_HNQ true 
+    -ignore_ligand_chi true 
+-out 
+    -file:silent dockingUGT.silents
+    -file:scorefile dockingUGT.sc
+    -level 100 
+    -nstruct 500 
+    -overwrite
